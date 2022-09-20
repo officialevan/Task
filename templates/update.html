@@ -1,0 +1,21 @@
+{%extends "layout.html"%}
+<!------------Title section starts here------------>
+{%block header%}
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<title>Home | Manage your tasks</title>
+{%endblock%}
+<!----------------Title section ends here------------->
+<!----------------Body section starts here------------->
+{%block body%}
+
+<div class="task-container">
+    <h1>Update<span>Task</span></h1>
+
+    <form action="/update/{{task.id}}" method="post">
+        <input type="text" value="{{task.content}}" name="content" id="content" autocomplete="off" placeholder="Enter your Task...">
+        <input type="submit" value="Update task" class="btn">
+    </form>
+</div>
+
+{%endblock%}
+<!----------------Body section ends here------------->

@@ -1,0 +1,44 @@
+{%extends "layout.html"%}
+<!------------Title section starts here------------>
+{%block header%}
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<title>Home | Manage your tasks</title>
+{%endblock%}
+<!----------------Title section ends here------------->
+<!----------------Body section starts here------------->
+{%block body%}
+
+<div class="task-container">
+    <h1>Create<span>Task</span></h1>
+    {% if tasks|length < 1%}
+    <h3>There are no tasks. Create on below</h3>
+    {% else%}
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Date added</th>
+            <th>Actions</th>
+        </tr>
+        {%for task in tasks%}
+        <tr>
+            <td>{{task.content}}</td>
+            <td>{{task.date_created.date()}}</td>
+            <td>
+                <div class="task-actions">
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <a href="/update/{{task.id}}">Update</a>
+                </div>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+    {%endif%}
+
+    <form action="/" method="post">
+        <input type="text" name="content" id="content" autocomplete="off" placeholder="Enter your Task...">
+        <input type="submit" value="Add task" class="btn">
+    </form>
+</div>
+
+{%endblock%}
+<!----------------Body section ends here------------->

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+
+}
+body{
+    color: orangered;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.task-container{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    font-size: 20px;
+    width: 700px;
+}
+.task-container h1{
+    font-size: 60px;
+}
+.task-container h1 span{
+    color: antiquewhite;
+}
+h3{
+    color: #393838;
+    font-size: 40px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+table th, td {
+    padding: 15px;
+  }
+  
+table tr:nth-child(even){
+    background-color: #30303045;
+}
+.task-actions{
+    display: flex;
+}
+.task-actions a{
+    background: red;
+    color: white;
+    text-decoration: none;
+    padding: 4px;
+    margin-right: 5px;
+    border-radius: 14px;
+}
+.task-actions a:last-child{
+    background: orangered;
+    color: black;
+}
+form input{
+    width: 100%;
+    border: 2px solid rgb(255, 255, 255);
+    outline: none;
+    background: #393838;
+    padding: 15px;
+    margin: 15px 0;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+.btn{
+    background: orangered;
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(193, 58, 9);
+}
